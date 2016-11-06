@@ -1,0 +1,28 @@
+{
+  "name": "de-zomerse-nachten",
+  "version": "0.0.1",
+  "description": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lodybo/de-zomerse-nachten.git"
+  },
+  "author": "Lody Borgers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lodybo/de-zomerse-nachten/issues"
+  },
+  "homepage": "https://github.com/lodybo/de-zomerse-nachten#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-tslint": "^6.1.3",
+    "gulp-typescript": "^3.1.2",
+    "karma": "^1.3.0",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.6"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "de-zomerse-nachten",
+  "description": "0.0.1",
+  "main": "index.js",
+  "authors": [
+    "Lody Borgers"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "material-design-lite": "^1.2.1",
+    "angularfire": "^2.1.0"
+  }
+}
