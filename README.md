@@ -10,6 +10,11 @@ It uses the following frameworks and systems to run on:
 * Gulp (build tool)
 * Karma (browser testing)
 
+## Gulp
+Gulp can be used to perform a number of build tasks. For now, the following tasks are configured:
+* `gulp connect:dev`: Runs a local development server
+* `gulp connect:prototype`: Runs a local server where the development prototype is visible
+
 ## Zomerse Nachten database
 The database needs to store the following objects:
 * Events
