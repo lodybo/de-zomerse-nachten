@@ -1,0 +1,22 @@
+.event-card.mdl-card {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.event-card.event-card-attending .mdl-card__title, .event-card.event-card-attending .mdl-button--colored {
+    background: rgb(76,175,80);
+}
+
+.event-card-button-right {
+    float: right;
+}
+
+.event-card .mdl-card__title {
+    background: rgb(63,81,181);
+    color: white;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
