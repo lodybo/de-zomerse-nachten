@@ -3,8 +3,9 @@
     margin-bottom: 25px;
 }
 
-.event-card.event-card-attending .mdl-card__title, .event-card.event-card-attending .mdl-button--colored {
-    background: rgb(76,175,80);
+.event-card.event-card-attending .mdl-card__title, .event-card.event-card-attending .mdl-button--primary {
+    background: rgb(76,175,80) !important;
+    color: #FFFFFF !important;
 }
 
 .event-card-button-right {
@@ -12,8 +13,7 @@
 }
 
 .event-card .mdl-card__title {
-    background: rgb(63,81,181);
-    color: white;
+    color: #FFFFFF;
 }
 
 .material-icons.md-18 { font-size: 18px; }
