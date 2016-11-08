@@ -13,7 +13,7 @@ gulp.task("connect:dev", function () {
     });
 });
 
-gulp.task("connect:prototype", function () {
+gulp.task("connect:proto", function () {
     connect.server({
         name: "prototype",
         root: "_prototype",
@@ -21,3 +21,14 @@ gulp.task("connect:prototype", function () {
         livereload: true
     });
 });
+
+gulp.task("watch:proto", function () {
+    gulp.watch("_prototype/**/*", ["process:proto"]);
+});
+
+gulp.task("process:proto", function () {
+    gulp.src("_prototype/**/*")
+        .pipe(connect.reload());
+});
+
+gulp.task("serve:proto", ["connect:proto", "watch:proto"]);
