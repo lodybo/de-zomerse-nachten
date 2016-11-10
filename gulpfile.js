@@ -8,6 +8,7 @@ gulp.task("connect:dev", function () {
     connect.server({
         name: "dev",
         root: "dist",
+        host: "127.0.0.1",
         port: 9001,
         livereload: true
     });
@@ -17,6 +18,7 @@ gulp.task("connect:proto", function () {
     connect.server({
         name: "prototype",
         root: "_prototype",
+        host: "127.0.0.1",
         port: 9002,
         livereload: true
     });
