@@ -1,6 +1,6 @@
 {
   "name": "de-zomerse-nachten",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "PWA for De Zomerse Nachten",
   "main": "index.js",
   "scripts": {
