@@ -3,7 +3,7 @@
     margin-bottom: 25px;
 }
 
-.event-card.event-card-attending .mdl-card__title, .event-card.event-card-attending .mdl-button--primary {
+.button-attending {
     background: rgb(76,175,80) !important;
     color: #FFFFFF !important;
 }
@@ -42,4 +42,34 @@
 
 .ava {
     border-radius: 50%;
+    max-width: 100%;
+}
+
+.details .presenting {
+    text-align: left;
+}
+
+@media(max-width: 480px) {
+    .details .presenting {
+        text-align: center;
+    }
+}
+
+.details .presenting p {
+    margin-bottom: 0;
+}
+
+.details .presenting h3 {
+    margin-top: 0;
+}
+
+.details .program h4 {
+    margin-top: 0;
+}
+
+.details .program ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%
 }
