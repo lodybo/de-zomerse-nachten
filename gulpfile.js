@@ -97,3 +97,4 @@ gulp.task("build", ["eslint", "uglify", "copy"])
 
 gulp.task("serve:proto", ["connect:proto", "watch:proto"]);
 gulp.task("serve:dev", ["build", "connect:dev", "watch:dev"]);
+gulp.task("serve", ["serve:proto", "serve:dev"]);

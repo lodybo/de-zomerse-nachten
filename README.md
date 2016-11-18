@@ -12,8 +12,11 @@ It uses the following frameworks and systems to run on:
 
 ## Gulp
 Gulp can be used to perform a number of build tasks. For now, the following tasks are configured:
-* `gulp connect:dev`: Runs a local development server
+* `gulp serve:dev`: Runs a local development server
 * `gulp serve:proto`: Runs a local server with LiveReload where the development prototype is visible
+* `gulp serve`: Runs both simultaneously
+
+* `gulp build`: Builds a distributable artifact into the `dist/` folder that can be put on a platform.
 
 ## Zomerse Nachten database
 The database needs to store the following objects:
