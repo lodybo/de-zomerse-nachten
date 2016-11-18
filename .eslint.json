@@ -1,0 +1,9 @@
+{
+    "extends": "angular",
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "angular/di": [2, "array"]
+    }
+}

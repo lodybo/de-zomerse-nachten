@@ -1,5 +1,9 @@
+.vscode/
+.tmp/
+
+typings/
 node_modules/
 bower_components/
+
 dist/
-.vscode/
-typings/
+build/
