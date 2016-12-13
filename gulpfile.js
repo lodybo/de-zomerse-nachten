@@ -4,7 +4,8 @@ var gulp = require("gulp"),
     uglify = require("gulp-uglify"),
     pump = require("pump"),
     concat = require("gulp-concat"),
-    clean = require("gulp-clean");
+    clean = require("gulp-clean"),
+    sass = require("gulp-sass");
 
 /**
  * CONNECT TASKS
@@ -37,6 +38,20 @@ gulp.task("process:proto", function () {
 gulp.task("process:dev", ["copy"], function () {
     gulp.src(["src/**/*", ".tmp/**/*"])
         .pipe(connect.reload());
+});
+
+/**
+ * SCSS
+ */
+gulp.task("scss", function () {
+    return gulp.src("src/**/*.scss")
+        .pipe(sass({
+            outputStyle: "compressed"
+        }).on("error", sass.logError))
+        .pipe(concat("styles.css", {
+            newLine: ";"
+        }))
+        .pipe(gulp.dest("dist/css/"));
 });
 
 /**
@@ -91,9 +106,10 @@ gulp.task("watch:proto", function () {
 gulp.task("watch:dev", function () {
     gulp.watch("src/**/*.js", ["eslint", "concatenate:on-the-fly"]);
     gulp.watch("src/**/*.html", ["concatenate:on-the-fly"]);
+    gulp.watch("src/**/*.scss", ["scss"]);
 });
 
-gulp.task("build", ["eslint", "uglify", "copy"])
+gulp.task("build", ["scss", "eslint", "uglify", "copy"])
 
 gulp.task("serve:proto", ["connect:proto", "watch:proto"]);
 gulp.task("serve:dev", ["build", "connect:dev", "watch:dev"]);
