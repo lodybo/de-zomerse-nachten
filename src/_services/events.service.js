@@ -5,7 +5,7 @@ angular.module("dznApp").factory("EventsService", ["$q", function ($q) {
     var event = {
         name: "De Kracht van Tonen",
         date: date,
-        time: date.getTime(),
+        time: date,
         address: "Chrysantenstraat 23, 5644KL Eindhoven",
         presenter: "Lody Borgers",
         summary: "lol",

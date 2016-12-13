@@ -3,7 +3,7 @@ angular.module("dznApp").controller("MainController", ["EventsService", function
 
     vm.events = [];
 
-    EventsService.getEvents().then(function(events) {
+    EventsService.getEvents().then(function (events) {
         vm.events = events;
     });
 }]);
