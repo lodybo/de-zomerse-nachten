@@ -120,8 +120,9 @@ gulp.task("watch:dev", function () {
     gulp.watch("src/**/*.scss", ["scss:dev"]);
 });
 
-gulp.task("build", ["scss:prod", "eslint", "uglify", "copy"])
+gulp.task("build:dev", ["scss:dev", "eslint", "uglify", "copy"]);
+gulp.task("build:prod", ["scss:prod", "eslint", "uglify", "copy"]);
 
 gulp.task("serve:proto", ["connect:proto", "watch:proto"]);
-gulp.task("serve:dev", ["build", "scss:dev", "connect:dev", "watch:dev"]);
+gulp.task("serve:dev", ["build:dev", "connect:dev", "watch:dev"]);
 gulp.task("serve", ["serve:proto", "serve:dev"]);
