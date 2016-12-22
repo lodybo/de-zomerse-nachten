@@ -44,7 +44,7 @@ gulp.task("process:dev", ["copy"], function () {
  * SCSS
  */
 gulp.task("scss", function () {
-    return gulp.src("src/**/*.scss")
+    return gulp.src("src/app.scss")
         .pipe(sass({
             outputStyle: "compressed"
         }).on("error", sass.logError))
