@@ -62,7 +62,7 @@ gulp.task("scss:prod", function () {
         .pipe(gulp.dest("dist/css/"));
 });
 
-gulp.task("scss:dev", ["process:dev"], function () {
+gulp.task("scss:dev", ["concatenate:on-the-fly"], function () {
     return gulp.src("src/app.scss")
         .pipe(sass({
             outputStyle: "expanded"
