@@ -43,7 +43,7 @@ gulp.task("process:dev", ["copy"], function () {
 /**
  * SCSS
  */
-gulp.task("scss", function () {
+gulp.task("scss:prod", function () {
     return gulp.src("src/app.scss")
         .pipe(sass({
             outputStyle: "compressed"
@@ -52,6 +52,17 @@ gulp.task("scss", function () {
             newLine: ";"
         }))
         .pipe(gulp.dest("dist/css/"));
+});
+
+gulp.task("scss:dev", ["process:dev"], function () {
+    return gulp.src("src/app.scss")
+        .pipe(sass({
+            outputStyle: "expanded"
+        }).on("error", sass.logError))
+        .pipe(concat("styles.css", {
+            newLine: ";"
+        }))
+        .pipe(gulp.dest(".tmp/css/"));
 });
 
 /**
@@ -106,11 +117,11 @@ gulp.task("watch:proto", function () {
 gulp.task("watch:dev", function () {
     gulp.watch("src/**/*.js", ["eslint", "concatenate:on-the-fly"]);
     gulp.watch("src/**/*.html", ["concatenate:on-the-fly"]);
-    gulp.watch("src/**/*.scss", ["scss"]);
+    gulp.watch("src/**/*.scss", ["scss:dev"]);
 });
 
-gulp.task("build", ["scss", "eslint", "uglify", "copy"])
+gulp.task("build", ["scss:prod", "eslint", "uglify", "copy"])
 
 gulp.task("serve:proto", ["connect:proto", "watch:proto"]);
-gulp.task("serve:dev", ["build", "connect:dev", "watch:dev"]);
+gulp.task("serve:dev", ["build", "scss:dev", "connect:dev", "watch:dev"]);
 gulp.task("serve", ["serve:proto", "serve:dev"]);
