@@ -6,8 +6,8 @@
         <div class="mdl-card__supporting-text mdl-grid">
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cel--6-col">
                 <p>
-                    <strong><i class="material-icons">date_range</i> <span class="icon-text" ng-bind="event.date.toLocaleDateString()"></span></strong> <br />
-                    <em><i class="material-icons">access_time</i> <span class="icon-text" ng-bind="event.time.toLocaleTimeString()"></span></em> <br />
+                    <strong><i class="material-icons">date_range</i> <span class="icon-text" ng-bind="event.date | date:'longDate'"></span></strong> <br />
+                    <em><i class="material-icons">access_time</i> <span class="icon-text" ng-bind="event.time | date:'H:mm'"></span></em> <br />
                     <i class="material-icons">face</i> <span class="icon-text" ng-bind="event.presenter"></span>
                 </p>
             </div>

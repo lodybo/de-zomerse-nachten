@@ -7,6 +7,14 @@ var gulp = require("gulp"),
     clean = require("gulp-clean"),
     sass = require("gulp-sass");
 
+var jsSources = [
+    "bower_components/angular/angular.js",
+    "bower_components/angular-i18n/angular-locale_nl-nl.js",
+    "bower_components/angular-route/angular-route.js",
+    "src/app.js",
+    "src/*/*.js"
+];
+
 /**
  * CONNECT TASKS
  */
@@ -78,13 +86,13 @@ gulp.task("eslint", function () {
 });
 
 gulp.task("concatenate", ["clean"], function () {
-    return gulp.src(["bower_components/angular/angular.js", "bower_components/angular-route/angular-route.js", "src/app.js", "src/*/*.js"])
+    return gulp.src(jsSources)
         .pipe(concat("scripts.js"))
         .pipe(gulp.dest(".tmp/"));
 });
 
 gulp.task("concatenate:on-the-fly", ["process:dev"], function () {
-    return gulp.src(["bower_components/angular/angular.js", "bower_components/angular-route/angular-route.js", "src/app.js", "src/*/*.js"])
+    return gulp.src(jsSources)
         .pipe(concat("scripts.js"))
         .pipe(gulp.dest(".tmp/"));
 });
