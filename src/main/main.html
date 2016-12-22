@@ -29,8 +29,12 @@
                 Meer info
             </a>
 
-            <a class="event-card-button-right mdl-button mdl-button--raised mdl-button--colored mdl-button--primary mdl-js-button">
+            <a class="event-card-button-right mdl-button mdl-button--raised mdl-button--colored mdl-button--primary mdl-js-button" ng-if="!event.attending">
                 Ik wil hierheen!
+            </a>
+
+            <a class="event-card-button-right button-attending mdl-button mdl-button--raised mdl-button--colored mdl-button--primary mdl-js-button" ng-if="event.attending">
+                Ik ben aanwezig!
             </a>
         </div>
     </div>
@@ -67,8 +71,12 @@
                 Meer info
             </a>
 
-            <a class="event-card-button-right mdl-button mdl-button--raised mdl-button--colored mdl-button--primary mdl-js-button">
+            <a class="event-card-button-right mdl-button mdl-button--raised mdl-button--colored mdl-button--primary mdl-js-button" ng-if="!event.attending">
                 Ik wil hierheen!
+            </a>
+
+            <a class="event-card-button-right button-attending mdl-button mdl-button--raised mdl-button--colored mdl-button--primary mdl-js-button" ng-if="event.attending">
+                Ik ben aanwezig!
             </a>
         </div>
     </div>

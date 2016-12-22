@@ -101,7 +101,7 @@ angular.module("dznApp").factory("EventsService", ["$q", function ($q) {
             activity: "Einde",
             time: "22:30"
         }],
-        attending: true,
+        attending: false,
         attendants: ["Oscar Lemmens", "Daan Linnartz"]
     }, {
         name: "De Kracht van Tonen",
@@ -121,7 +121,7 @@ angular.module("dznApp").factory("EventsService", ["$q", function ($q) {
             activity: "Einde",
             time: "22:30"
         }],
-        attending: false,
+        attending: true,
         attendants: ["Oscar Lemmens", "Daan Linnartz"]
     }, {
         name: "De Kracht van Tonen",
