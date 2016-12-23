@@ -1,6 +1,6 @@
 {
   "name": "de-zomerse-nachten",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "PWA for De Zomerse Nachten",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,8 @@
     "gulp-typescript": "^3.1.2",
     "gulp-uglify": "^2.0.0",
     "karma": "^1.3.0",
-    "pump": "^1.0.1"
+    "pump": "^1.0.1",
+    "run-sequence": "^1.2.2"
   },
   "dependencies": {}
 }
