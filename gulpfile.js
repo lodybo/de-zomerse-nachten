@@ -6,7 +6,8 @@ var gulp = require("gulp"),
     concat = require("gulp-concat"),
     clean = require("gulp-clean"),
     sass = require("gulp-sass"),
-    runSequence = require("run-sequence");
+    runSequence = require("run-sequence"),
+    karma = require("karma").Server;
 
 var jsSources = [
     "bower_components/angular/angular.js",
@@ -15,6 +16,8 @@ var jsSources = [
     "src/app.js",
     "src/*/*.js"
 ];
+
+var karmaConfigFile = __dirname + "/karma.conf.js";
 
 /**
  * CONNECT TASKS
@@ -100,6 +103,28 @@ gulp.task("uglify", ["concatenate"], function () {
     ]);
 });
 
+gulp.task("karma:unit", function (done) {
+    new karma({
+        configFile: karmaConfigFile,
+        singleRun: true
+    }, done).start();
+});
+
+gulp.task("karma:tdd", function (done) {
+    new karma({
+        configFile: karmaConfigFile,
+        singleRun: true,
+        browsers: ["PhantomJS"]
+    }, done).start();
+});
+
+gulp.task("karma:debug", function (done) {
+    new karma({
+        configFile: karmaConfigFile,
+        browsers: ["Chrome"]
+    }, done).start();
+});
+
 /**
  * MISC.
  */
@@ -122,7 +147,7 @@ gulp.task("watch:proto", function () {
 });
 
 gulp.task("watch:dev", function () {
-    gulp.watch("src/**/*.js", ["eslint", "concatenate"]);
+    gulp.watch("src/**/*.js", ["eslint", "karma:tdd", "concatenate"]);
     gulp.watch("src/**/*.html", ["copy"]);
     gulp.watch("src/**/*.scss", ["scss:dev"]);
 });
@@ -132,7 +157,7 @@ gulp.task("build:dev", function () {
 });
 
 gulp.task("build", function () {
-    runSequence("clean", ["scss:prod", "eslint", "concatenate", "uglify", "copy"]);
+    runSequence("clean", ["scss:prod", "eslint", "karma:unit", "concatenate", "uglify", "copy"]);
 });
 
 gulp.task("serve:proto", ["connect:proto", "watch:proto"]);
