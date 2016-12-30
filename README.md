@@ -18,6 +18,11 @@ Gulp can be used to perform a number of build tasks. For now, the following task
 
 * `gulp build`: Builds a distributable artifact into the `dist/` folder that can be put on a platform.
 
+Off course, unit tests are incorporated into the project. `gulp serve:dev` runs them automatically on change, but there are additional `gulp` tasks:
+* `gulp karma:unit` runs all the unit tests once in Chrome, Firefox, and PhantomJS.
+* `gulp karma:tdd` runs the unit tests once in PhantomJS.
+* `gulp karma:debug` runs all the unit tests once in Chrome so they can be debugged.
+
 ## Zomerse Nachten database
 The database needs to store the following objects:
 * Events
