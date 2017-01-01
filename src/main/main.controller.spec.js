@@ -70,14 +70,32 @@ describe("Testing the Main Controller", function () {
         });
     }]));
 
-    it("Should get some events", function () {
+    describe("Testing the event loading", function () {
         var events;
-        
-        EventService.getEvents().then(function (data) {
-            events = data;
+        beforeEach(function () {
+            EventService.getEvents().then(function (data) {
+                events = data;
+            });
+
+            scope.$apply();
+        }); 
+
+        it("Should get some events", function () {
+            expect(events.length).toBeGreaterThan(0);
         });
 
-        scope.$apply();
-        expect(events.length).toBeGreaterThan(0);
+        it("Should toggle an event whether you're attending it or not", function () {
+            var event = events[0];
+
+            expect(event.attending).toBeFalsy();
+
+            scope.toggleAttendance(event.id);
+
+            expect(event.attending).toBeTruthy();
+
+            scope.toggleAttendance(event.id);
+
+            expect(event.attending).toBeFalsy();
+        });
     });
 });

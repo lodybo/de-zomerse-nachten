@@ -6,4 +6,8 @@ angular.module("dznApp").controller("MainController", ["EventsService", function
     EventsService.getEvents().then(function (events) {
         vm.events = events;
     });
+
+    vm.toggleAttendance = function (eventID) {
+        EventsService.toggleEventAttendance(eventID);
+    };
 }]);
